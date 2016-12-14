@@ -14,12 +14,13 @@ determined by command line argument
 -view the current value
 -remove the semaphore
 */
-/*union semun{
+union semun{
   int val;
   struct semid_ds *buf;
   unsigned short *array;
-  struct seminfor *_buf;
+  struct seminfo *_buf;
 };
+
 int main(int argc, char *argv[]){
   int semid;
   int key = ftok("makefile" , 22);
@@ -53,7 +54,7 @@ int main(int argc, char *argv[]){
   return 0;
 
 }
-*/
+
 
 int main(){
   srand(time(NULL));
