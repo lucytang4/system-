@@ -105,3 +105,38 @@ Physical Layer
       In Thicknet and Thinnet, all data is sent to all computers
 
       Each computer added increases the power drain on the entire system, degrading service
+
+12/21
+Aim: Cisco in an hour Part II: Electric Boogaloo
+
+   Token Ring
+
+      Each computer is connected in a ring to each other
+
+      Only one computer has command of network resources at a time. This is called "having the token"
+
+      The network sends a "token" throughout the ring, which contains the identity of the computer allowed to use the network. All other computers must wait to use the network
+
+      No possibility of collisions
+
+   Ethernet
+
+      Multiple computers connect to a single hub or switch
+
+      Hub
+
+         Broadcasts the data to all computers
+
+      Switch
+
+         Sends data to a specific computer
+
+      The more computers you add to an ethernet network the greater the chance of collisions
+
+Data Link Layer
+
+   Point-to-point transmission between devices on the same local network
+
+   Ethernet Connections:
+
+      Each device is given a unique 6-Byte MAC (Media Access Control) address, this is set on each network card when it is made 
