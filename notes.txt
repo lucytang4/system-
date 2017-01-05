@@ -184,4 +184,84 @@ Network Layer
 
       Routing is made easier by having IP addresses distributed in blocks
 
-   
+1/4
+Aim: Cisco in an hour Part V: V for Vendetta
+
+Network Layer
+
+   blah
+
+
+    Data is broken into packets (IPv4)
+        header info: packet type (IPv4/6), header length...
+        fragment info: full payloads may be broken up, this will have total # of fragments, which fragment...
+        time-to-live: max # of hops before the packet dies
+        protocol: TCP/UDP/...
+        header checksum: checksum of header bytes (exclude source/dest)
+        source and destination: IP addesses
+        ...: optional information depending on protocol, type etc
+    IPv6
+        Problem with IPv4 is that we are running out of usable IPv4 IP addresses
+        Biggest difference is the address space goes from 2^32 --> 2^128
+        Addresses are written as 8 groups of 4 hexadecimal digits
+            87ab : 301c : a45d : 2143 : ff87 : abcd : dead : feed
+            leading 0s are ignored, consecutive 0-groups can be replaced with ::, but only once in an address
+            :: ffff : 149.89.150.100
+        smallest range of IPv6 is equivalent to an IPv4 IP addresss
+        Jumbograms
+            Increases the MTU to ~4.3 billion (2^32)
+        Other improvements in IPv6 make the protocol incompatible with IPv4.
+
+
+1/5
+Aim: Cisco in an hour VI: The Undiscovered Country
+
+Transport Layer
+
+   Computer to computer connection over a network
+
+   Unconcerned with the individual hops of layer 3 traffic
+
+   Each destination address has multiple ports
+
+      65,535 ports
+
+      Each port corresponds to a particular service
+
+      ports < 1024 are well known, reserved ports
+
+      Regulated by the Internet Assigned Numbers Authority (IANA)
+
+   TCP
+
+      Transmission Control Protol
+
+      Reliable connection
+
+      Guarantees delivery of data
+
+      Data is considered a continuous stream that arrives in the order it is sent (which may not be true in the network layer)
+
+      Connections are established using a 3-way handshake
+
+         Server "binds" to a port and waits
+
+         1. Client sends a SYN message to the server
+
+         2. Server sends the client a SYN_ACK message
+
+         3. Client sends an ACK message to the server
+
+   UDP
+
+      User Data Protocol
+
+      Does not require an explicit connection
+
+      Data is sent as discrete datagrams with a set size (as opposed to a continuous stream)
+
+      Datagrams may be dropped or received out of order
+
+      Assumes that any kind of error checking is handled at a later level
+
+
