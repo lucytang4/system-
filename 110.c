@@ -13,6 +13,9 @@ int main(){
   sock.sin_port = htons(9001);
   bind(sd,(struct sockaddr *)&sock,sizeof(sock));
   listen(sd,1);
+  struct sockaddr_in sock1;
+  unsigned int socklen = sizeof(sock1);
+  connection = accept(sd,(struct sockaddr *)&sock,&socklen);
 
   //create another main file for client side
   /*
