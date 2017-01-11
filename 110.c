@@ -15,8 +15,10 @@ int main(){
   listen(sd,1);
   struct sockaddr_in sock1;
   unsigned int socklen = sizeof(sock1);
-  connection = accept(sd,(struct sockaddr *)&sock,&socklen);
-
+  connection = accept(sd,(struct sockaddr *)&sock1,&socklen);
+  read(connection,buffer,sizeof(buffer));
+  printf("server got: <%s>\n",buffer);
+  
   //create another main file for client side
   /*
 int sd;
@@ -27,6 +29,8 @@ char *host = "127.0.0.1";
   inet_aton(host,&(sock.sin_addr));
   sock.sin_port = htons(9001);
 bind(sd,(struct sockaddr *)&sock,sizeof(sock));
+connect(sd,(struct sockaddr *)&sock,sizeof(sock));
+write(sd,"hello",6);
    */
   
   return 0;
