@@ -28,7 +28,7 @@ char *host = "127.0.0.1";
   sock.sin_family = AF_INET;
   inet_aton(host,&(sock.sin_addr));
   sock.sin_port = htons(9001);
-bind(sd,(struct sockaddr *)&sock,sizeof(sock));
+bind(sd,(struct sockaddr *)&sock,sizeof(sock));//not needed anymore
 connect(sd,(struct sockaddr *)&sock,sizeof(sock));
 write(sd,"hello",6);
    */
